@@ -107,6 +107,17 @@ function ActivityDetailPage() {
     activity?.status ?? 'PENDING',
   )
 
+  const storedUser = localStorage.getItem('kai_user')
+
+const currentUser = storedUser
+  ? (JSON.parse(storedUser) as {
+      tenantRole?: string
+    })
+  : null
+
+const canValidate =
+  currentUser?.tenantRole === 'COMPANY_ADMIN'
+
   if (!activity) {
     return (
       <section className="activity-detail-page">
@@ -295,25 +306,31 @@ function ActivityDetailPage() {
           Listeye Dön
         </Link>
 
-        {status === 'PENDING' && (
-          <>
-            <button
-              className="reject-button"
-              type="button"
-              onClick={rejectActivity}
-            >
-              Reddet
-            </button>
+        {status === 'PENDING' && canValidate && (
+  <>
+    <button
+      className="reject-button"
+      type="button"
+      onClick={rejectActivity}
+    >
+      Reddet
+    </button>
 
-            <button
-              className="primary-button"
-              type="button"
-              onClick={validateActivity}
-            >
-              Doğrula
-            </button>
-          </>
-        )}
+    <button
+      className="primary-button"
+      type="button"
+      onClick={validateActivity}
+    >
+      Doğrula
+    </button>
+  </>
+)}
+
+{status === 'PENDING' && !canValidate && (
+  <span className="permission-message">
+    Bu kayıt yalnızca şirket yöneticisi tarafından doğrulanabilir.
+  </span>
+)}
       </div>
     </section>
   )

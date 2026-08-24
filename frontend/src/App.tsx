@@ -1,34 +1,42 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AppLayout from './components/AppLayout'
+import ProtectedRoute from './components/ProtectedRoute'
 import ActivitiesPage from './pages/ActivitiesPage'
 import NewActivityPage from './pages/NewActivityPage'
 import ActivityDetailPage from './pages/ActivityDetailPage'
+import LoginPage from './pages/LoginPage'
 import './App.css'
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<AppLayout />}>
-        <Route
-          index
-          element={<Navigate to="/activities" replace />}
-        />
+      <Route path="/login" element={<LoginPage />} />
 
-        <Route
-          path="activities"
-          element={<ActivitiesPage />}
-        />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<AppLayout />}>
+          <Route
+            index
+            element={<Navigate to="/activities" replace />}
+          />
 
-        <Route
-          path="activities/new"
-          element={<NewActivityPage />}
-        />
+          <Route
+            path="activities"
+            element={<ActivitiesPage />}
+          />
 
-        <Route
-          path="activities/:activityId"
-          element={<ActivityDetailPage />}
-        />
+          <Route
+            path="activities/new"
+            element={<NewActivityPage />}
+          />
+
+          <Route
+            path="activities/:activityId"
+            element={<ActivityDetailPage />}
+          />
+        </Route>
       </Route>
+
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
 }

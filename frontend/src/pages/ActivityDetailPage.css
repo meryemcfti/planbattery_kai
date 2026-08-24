@@ -258,4 +258,10 @@
     justify-content: center;
     width: 100%;
   }
+
+  .permission-message {
+  margin-right: auto;
+  color: #66758a;
+  font-size: 14px;
+}
 }
