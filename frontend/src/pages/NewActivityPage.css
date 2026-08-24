@@ -1,0 +1,150 @@
+.page-header {
+  margin-bottom: 24px;
+}
+
+.breadcrumb {
+  color: #718096;
+  font-size: 14px;
+}
+
+.page-header h1 {
+  margin-top: 10px;
+}
+
+.page-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scope-badge {
+  padding: 6px 11px;
+  border: 1px solid #b9dfca;
+  border-radius: 999px;
+  color: #23764c;
+  background: #eaf7ef;
+}
+
+.activity-form {
+  width: 100%;
+  max-width: 1050px;
+  padding: 28px;
+  border: 1px solid #dce3e9;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.form-information {
+  padding: 13px 15px;
+  border: 1px solid #dce3e9;
+  border-radius: 8px;
+  color: #617087;
+  background: #f7f9fa;
+}
+
+.form-section {
+  margin: 28px 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-section legend {
+  width: 100%;
+  margin-bottom: 18px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #dce3e9;
+  color: #718096;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.form-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-field {
+  display: grid;
+  gap: 7px;
+  color: #17243a;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cad4df;
+  border-radius: 8px;
+  color: #142033;
+  background: #ffffff;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #2f8a5d;
+  outline: 3px solid #cbe9d8;
+}
+
+.form-field input:disabled {
+  color: #526174;
+  background: #f0f3f5;
+}
+
+.form-field.invalid input,
+.form-field.invalid select,
+.form-field.invalid textarea {
+  border-color: #c74646;
+}
+
+.field-error {
+  color: #b23434;
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #dce3e9;
+}
+
+.button {
+  padding: 11px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.primary-button {
+  color: #ffffff;
+  background: #287a51;
+}
+
+.secondary-button {
+  color: #25364c;
+  border-color: #cad4df;
+  background: #ffffff;
+}
+
+@media (max-width: 800px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-form {
+    padding: 20px;
+  }
+}
