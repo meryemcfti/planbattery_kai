@@ -1,11 +1,38 @@
+import {
+  Navigate,
+  Route,
+  Routes,
+} from 'react-router-dom'
+
+import AppLayout from './components/AppLayout'
+import ActivitiesPage from './pages/ActivitiesPage'
+import NewActivityPage from './pages/NewActivityPage'
+
 import './App.css'
 
 function App() {
   return (
-    <main>
-      <h1>PlanBattery KAI</h1>
-      <p>Karbon ayak izi frontend çalışıyor.</p>
-    </main>
+    <Routes>
+      <Route
+        path="/"
+        element={<AppLayout />}
+      >
+        <Route
+          index
+          element={<Navigate to="/activities" replace />}
+        />
+
+        <Route
+          path="activities"
+          element={<ActivitiesPage />}
+        />
+
+        <Route
+          path="activities/new"
+          element={<NewActivityPage />}
+        />
+      </Route>
+    </Routes>
   )
 }
 
