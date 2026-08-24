@@ -51,10 +51,7 @@ function AppLayout() {
         </div>
 
         <div className="selected-company">
-          <span className="company-label">
-            SEÇİLİ ŞİRKET
-          </span>
-
+          <span className="company-label">SEÇİLİ ŞİRKET</span>
           <strong>{user.tenantName}</strong>
         </div>
 
@@ -78,9 +75,12 @@ function AppLayout() {
             Faaliyetler
           </NavLink>
 
-          <span className="navigation-item disabled">
+          <NavLink
+            className="navigation-item"
+            to="/reports"
+          >
             Raporlar
-          </span>
+          </NavLink>
         </nav>
 
         <div className="current-user">

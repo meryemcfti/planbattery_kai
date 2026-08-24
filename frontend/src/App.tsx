@@ -5,6 +5,8 @@ import ActivitiesPage from './pages/ActivitiesPage'
 import NewActivityPage from './pages/NewActivityPage'
 import ActivityDetailPage from './pages/ActivityDetailPage'
 import LoginPage from './pages/LoginPage'
+import ReportsPage from './pages/ReportsPage'
+import ReportOptionsPage from './pages/ReportOptionsPage'
 import './App.css'
 
 function App() {
@@ -35,6 +37,16 @@ function App() {
           />
         </Route>
       </Route>
+
+      <Route
+  path="reports"
+  element={<ReportOptionsPage />}
+/>
+
+<Route
+  path="reports/preview"
+  element={<ReportsPage />}
+/>
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
