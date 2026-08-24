@@ -121,6 +121,7 @@ function ActivitiesPage() {
         <div>
           <p className="breadcrumb">Faaliyetler / Doğalgaz</p>
           <h1>Doğalgaz Faaliyetleri</h1>
+
           <p className="page-description">
             2026 Kurumsal Karbon Değerlendirmesi · Scope 1 · Sabit Yanma
           </p>
@@ -153,18 +154,21 @@ function ActivitiesPage() {
         </article>
       </div>
 
-      <div className="warning-banner">
+      <div className="completion-warning">
         Bu değerlendirme henüz tamamlanmamıştır. Hesaplanmamış kayıtlar
         toplam emisyon sonucuna dahil edilmemiştir.
       </div>
 
-      <div className="activities-panel">
-        <div className="filters">
+      <div className="activity-table-card">
+        <div className="activity-filters">
           <label>
             <span>Tesis</span>
+
             <select
               value={facilityFilter}
-              onChange={(event) => setFacilityFilter(event.target.value)}
+              onChange={(event) =>
+                setFacilityFilter(event.target.value)
+              }
             >
               <option value="">Tüm Tesisler</option>
               <option value="Bucak">Bucak</option>
@@ -174,9 +178,12 @@ function ActivitiesPage() {
 
           <label>
             <span>Durum</span>
+
             <select
               value={statusFilter}
-              onChange={(event) => setStatusFilter(event.target.value)}
+              onChange={(event) =>
+                setStatusFilter(event.target.value)
+              }
             >
               <option value="">Tüm Durumlar</option>
               <option value="CALCULATED">Hesaplandı</option>
@@ -187,7 +194,7 @@ function ActivitiesPage() {
           </label>
 
           <button
-            className="clear-filters-button"
+            className="clear-filters"
             type="button"
             onClick={clearFilters}
           >
@@ -195,8 +202,8 @@ function ActivitiesPage() {
           </button>
         </div>
 
-        <div className="table-wrapper">
-          <table className="activities-table">
+        <div className="table-container">
+          <table>
             <thead>
               <tr>
                 <th>Tüketim Dönemi</th>
@@ -218,6 +225,7 @@ function ActivitiesPage() {
                   <td>{activity.consumption}</td>
                   <td>{activity.sourceType}</td>
                   <td>{activity.sourceReference}</td>
+
                   <td>
                     <span
                       className={`status-badge status-${activity.status.toLowerCase()}`}
@@ -225,30 +233,37 @@ function ActivitiesPage() {
                       {statusLabels[activity.status]}
                     </span>
                   </td>
-                  <td>{activity.result ?? '—'}</td>
-                  <td>
-                    <button className="view-button" type="button">
-                      {activity.status === 'FAILED'
-                        ? 'Sorunu Gör'
-                        : 'Görüntüle'}
-                    </button>
 
-                    {activity.status === 'DRAFT' && (
-                      <button
-                        className="delete-button"
-                        type="button"
-                        onClick={() => deleteActivity(activity.id)}
+                  <td>{activity.result ?? '—'}</td>
+
+                  <td>
+                    <div className="table-actions">
+                      <Link
+                        className="table-action"
+                        to={`/activities/${activity.id}`}
                       >
-                        Sil
-                      </button>
-                    )}
+                        {activity.status === 'FAILED'
+                          ? 'Sorunu Gör'
+                          : 'Görüntüle'}
+                      </Link>
+
+                      {activity.status === 'DRAFT' && (
+                        <button
+                          className="table-action delete-action"
+                          type="button"
+                          onClick={() => deleteActivity(activity.id)}
+                        >
+                          Sil
+                        </button>
+                      )}
+                    </div>
                   </td>
                 </tr>
               ))}
 
               {filteredActivities.length === 0 && (
                 <tr>
-                  <td className="empty-state" colSpan={8}>
+                  <td className="empty-table" colSpan={8}>
                     Seçilen filtrelere uygun kayıt bulunamadı.
                   </td>
                 </tr>

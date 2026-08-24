@@ -1,0 +1,261 @@
+.activity-detail-page {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.detail-header h1 {
+  margin: 8px 0;
+}
+
+.detail-status {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-pending {
+  color: #7a5b0c;
+  background: #fff3ce;
+}
+
+.status-validated {
+  color: #315d94;
+  background: #e7f0ff;
+}
+
+.status-calculated {
+  color: #23734a;
+  background: #e5f5eb;
+}
+
+.status-rejected,
+.status-failed {
+  color: #a33737;
+  background: #fde7e7;
+}
+
+.detail-card {
+  margin-bottom: 20px;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #dce3e9;
+  border-radius: 12px;
+}
+
+.detail-card h1,
+.detail-card h2 {
+  margin: 0 0 22px;
+  color: #10213a;
+}
+
+.detail-card h2 {
+  font-size: 20px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 0;
+}
+
+.detail-grid div {
+  min-width: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5eaee;
+}
+
+.detail-grid dt {
+  margin-bottom: 7px;
+  color: #66758a;
+  font-size: 14px;
+}
+
+.detail-grid dd {
+  margin: 0;
+  color: #10213a;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.calculation-info {
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  color: #315d94;
+  line-height: 1.5;
+  background: #eef5ff;
+  border: 1px solid #bdd3ef;
+  border-radius: 10px;
+}
+
+.calculation-error {
+  margin-bottom: 20px;
+  padding: 18px 20px;
+  color: #8e2929;
+  line-height: 1.5;
+  background: #fff1f1;
+  border: 1px solid #e9b8b8;
+  border-radius: 10px;
+}
+
+.calculation-error strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.calculation-error p {
+  margin: 5px 0;
+}
+
+.gas-results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gas-results article {
+  padding: 20px;
+  background: #f7faf8;
+  border: 1px solid #dbe7df;
+  border-radius: 10px;
+}
+
+.gas-results span {
+  display: block;
+  margin-bottom: 10px;
+  color: #66758a;
+  font-size: 14px;
+}
+
+.gas-results strong {
+  color: #163a2a;
+  font-size: 21px;
+}
+
+.result-card {
+  background: #f4fbf7;
+  border-color: #b9dbc8;
+}
+
+.result-card strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #23734a;
+  font-size: 32px;
+}
+
+.result-card p {
+  margin: 0 0 14px;
+  color: #43576e;
+  font-weight: 650;
+}
+
+.result-card small {
+  display: block;
+  color: #66758a;
+  line-height: 1.5;
+}
+
+.detail-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-bottom: 24px;
+}
+
+.primary-button,
+.secondary-button,
+.reject-button {
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button {
+  color: #ffffff;
+  background: #287a51;
+  border: 1px solid #287a51;
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  color: #287a51;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid #a9cdbb;
+}
+
+.reject-button {
+  color: #a33737;
+  background: #ffffff;
+  border: 1px solid #e2b4b4;
+}
+
+.primary-button:hover {
+  background: #216843;
+}
+
+.secondary-button:hover {
+  background: #f3faf6;
+}
+
+.reject-button:hover {
+  background: #fff5f5;
+}
+
+@media (max-width: 900px) {
+  .detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .gas-results {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .detail-header {
+    flex-direction: column;
+  }
+
+  .detail-status {
+    margin-top: 0;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .reject-button {
+    justify-content: center;
+    width: 100%;
+  }
+}
