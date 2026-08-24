@@ -196,8 +196,6 @@ function ReportsPage() {
     (activity) => activity.status === 'CALCULATED',
   )
 
-  const calculatedCount = calculatedActivities.length
-
   const waitingCount = scopedActivities.filter(
     (activity) =>
       activity.status === 'DRAFT' ||
@@ -452,31 +450,9 @@ function ReportsPage() {
           </section>
         )}
 
-        <section className="report-section">
-          <h3>
-            {isDetailedReport ? '3.' : '2.'}{' '}
-            Veri kalitesi ve tamamlanma durumu
-          </h3>
-
-          <div className="report-status-summary">
-            <strong>
-              Toplam {scopedActivities.length} kayıt:
-            </strong>
-
-            <span>{calculatedCount} hesaplandı</span>
-            <span>{waitingCount} işlem bekliyor</span>
-            <span>{failedCount} hesaplanamadı</span>
-          </div>
-
-          <p className="report-status-note">
-            Toplam emisyon sonucu yalnızca seçilen kapsamdaki
-            hesaplanmış kayıtlardan oluşturulmuştur.
-          </p>
-        </section>
-
         {isDetailedReport && (
           <section className="report-section">
-            <h3>4. Faaliyet kayıtları</h3>
+            <h3>3. Faaliyet kayıtları</h3>
 
             {displayedActivities.length > 0 ? (
               <table className="report-table">
@@ -517,7 +493,7 @@ function ReportsPage() {
 
         <section className="report-section">
           <h3>
-            {isDetailedReport ? '5.' : '3.'}{' '}
+            {isDetailedReport ? '4.' : '2.'}{' '}
             Emisyon sonucu
           </h3>
 
@@ -562,7 +538,7 @@ function ReportsPage() {
 
         <section className="report-section">
           <h3>
-            {isDetailedReport ? '6.' : '4.'}{' '}
+            {isDetailedReport ? '5.' : '3.'}{' '}
             Kısıtlar ve hariç tutulan kayıtlar
           </h3>
 
