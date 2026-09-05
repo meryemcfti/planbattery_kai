@@ -19,7 +19,7 @@ type ReportOptions = {
 }
 
 const initialOptions: ReportOptions = {
-  assessmentId: 'assessment-2026',
+  assessmentId: '',
   reportScope: 'COMPANY',
   facilityId: '',
   periodType: 'ASSESSMENT',
