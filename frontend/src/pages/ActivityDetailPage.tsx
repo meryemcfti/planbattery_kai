@@ -118,6 +118,294 @@ const currentUser = storedUser
 const canValidate =
   currentUser?.tenantRole === 'COMPANY_ADMIN'
 
+  function downloadPdf() {
+  if (!activity) {
+    return
+  }
+
+  const calculationContent = activity.calculation
+    ? `
+      <section>
+        <h2>Hesaplama Bilgileri</h2>
+
+        <div class="information-grid">
+          <div>
+            <span>Emisyon faktörü seti</span>
+            <strong>${activity.calculation.emissionFactorSet}</strong>
+          </div>
+
+          <div>
+            <span>GWP seti</span>
+            <strong>${activity.calculation.gwpSet}</strong>
+          </div>
+
+          <div>
+            <span>Çıktı birimi</span>
+            <strong>kgCO₂e ve tCO₂e</strong>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sera Gazı Kırılımı</h2>
+
+        <div class="gas-grid">
+          <div>
+            <span>CO₂ katkısı</span>
+            <strong>${activity.calculation.co2eFromCo2}</strong>
+          </div>
+
+          <div>
+            <span>CH₄ katkısı</span>
+            <strong>${activity.calculation.co2eFromCh4}</strong>
+          </div>
+
+          <div>
+            <span>N₂O katkısı</span>
+            <strong>${activity.calculation.co2eFromN2o}</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="result">
+        <h2>Toplam Emisyon Sonucu</h2>
+        <strong>${activity.calculation.totalTCo2e}</strong>
+        <p>${activity.calculation.totalKgCo2e}</p>
+      </section>
+    `
+    : `
+      <section class="status-message">
+        <h2>Hesaplama Durumu</h2>
+        <strong>${statusLabels[status]}</strong>
+        <p>
+          ${
+            status === 'FAILED'
+              ? activity.errorMessage
+              : 'Bu kayıt için emisyon hesabı henüz tamamlanmamıştır.'
+          }
+        </p>
+      </section>
+    `
+
+  const reportWindow = window.open('', '_blank', 'width=900,height=750')
+
+  if (!reportWindow) {
+    window.alert('PDF penceresi açılamadı. Açılır pencere izni vermelisiniz.')
+    return
+  }
+
+  reportWindow.document.write(`
+    <!doctype html>
+    <html lang="tr">
+      <head>
+        <meta charset="UTF-8" />
+
+        <title>Doğalgaz Kaydı - ${activity.period}</title>
+
+        <style>
+          @page {
+            size: A4;
+            margin: 14mm;
+          }
+
+          * {
+            box-sizing: border-box;
+          }
+
+          body {
+            margin: 0;
+            color: #10213a;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+          }
+
+          header {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 14px;
+            border-bottom: 3px solid #16855f;
+          }
+
+          header h1 {
+            margin: 0 0 5px;
+            font-size: 22px;
+          }
+
+          header p {
+            margin: 0;
+            color: #596c80;
+          }
+
+          .status {
+            height: fit-content;
+            padding: 7px 11px;
+            border-radius: 20px;
+            color: #126b4e;
+            background: #e8f6f0;
+            font-weight: bold;
+          }
+
+          section {
+            margin-top: 16px;
+            padding: 16px;
+            border: 1px solid #d9e3e6;
+            border-radius: 10px;
+          }
+
+          h2 {
+            margin: 0 0 13px;
+            font-size: 16px;
+          }
+
+          .information-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px 18px;
+          }
+
+          .information-grid div {
+            padding-bottom: 9px;
+            border-bottom: 1px solid #e2e8eb;
+          }
+
+          span {
+            display: block;
+            margin-bottom: 5px;
+            color: #627489;
+          }
+
+          strong {
+            line-height: 1.4;
+          }
+
+          .gas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+          }
+
+          .gas-grid div {
+            padding: 13px;
+            border: 1px solid #d7e7df;
+            border-radius: 8px;
+            background: #f5faf7;
+          }
+
+          .gas-grid strong {
+            font-size: 16px;
+          }
+
+          .result {
+            border-color: #a9d8c3;
+            background: #eef9f4;
+          }
+
+          .result > strong {
+            display: block;
+            color: #167857;
+            font-size: 27px;
+          }
+
+          .result p {
+            margin: 5px 0 0;
+            font-weight: bold;
+          }
+
+          .status-message {
+            background: #f7f9fa;
+          }
+
+          footer {
+            margin-top: 18px;
+            padding-top: 10px;
+            border-top: 1px solid #d9e3e6;
+            color: #65778a;
+            font-size: 10px;
+            text-align: center;
+          }
+        </style>
+      </head>
+
+      <body>
+        <header>
+          <div>
+            <h1>Doğalgaz Faaliyet Kayıt Raporu</h1>
+            <p>PlanBattery KAI · E&M Akü</p>
+          </div>
+
+          
+        </header>
+
+        <section>
+          <h2>Faaliyet Bilgileri</h2>
+
+          <div class="information-grid">
+            <div>
+              <span>Değerlendirme</span>
+              <strong>2026 Kurumsal Karbon Değerlendirmesi</strong>
+            </div>
+
+            <div>
+              <span>Tesis</span>
+              <strong>${activity.facility}</strong>
+            </div>
+
+            <div>
+              <span>Tüketim dönemi</span>
+              <strong>${activity.period}</strong>
+            </div>
+
+            <div>
+              <span>Tüketim miktarı</span>
+              <strong>${activity.consumption}</strong>
+            </div>
+
+            <div>
+              <span>Veri kaynağı</span>
+              <strong>${activity.sourceType}</strong>
+            </div>
+
+            <div>
+              <span>Kaynak referansı</span>
+              <strong>${activity.sourceReference}</strong>
+            </div>
+
+            <div>
+              <span>Tedarikçi</span>
+              <strong>${activity.supplierName}</strong>
+            </div>
+
+            <div>
+              <span>Kaydı giren</span>
+              <strong>${activity.enteredBy}</strong>
+            </div>
+
+            <div>
+              <span>Kayıt tarihi</span>
+              <strong>${activity.enteredAt}</strong>
+            </div>
+          </div>
+        </section>
+
+        ${calculationContent}
+
+        <footer>
+          Bu rapor ${new Date().toLocaleDateString('tr-TR')} tarihinde
+          PlanBattery KAI üzerinden oluşturulmuştur.
+        </footer>
+      </body>
+    </html>
+  `)
+
+  reportWindow.document.close()
+
+  reportWindow.onload = () => {
+    reportWindow.focus()
+    reportWindow.print()
+  }
+}
+
   if (!activity) {
     return (
       <section className="activity-detail-page">
@@ -126,10 +414,16 @@ const canValidate =
           <Link className="secondary-button" to="/activities">
             Faaliyet listesine dön
           </Link>
+
+
         </div>
       </section>
     )
   }
+
+
+
+
 
   function validateActivity() {
     setStatus('VALIDATED')
@@ -302,36 +596,44 @@ const canValidate =
       )}
 
       <div className="detail-actions">
-        <Link className="secondary-button" to="/activities">
-          Listeye Dön
-        </Link>
+  <Link className="secondary-button" to="/activities">
+    Listeye Dön
+  </Link>
 
-        {status === 'PENDING' && canValidate && (
-  <>
-    <button
-      className="reject-button"
-      type="button"
-      onClick={rejectActivity}
-    >
-      Reddet
-    </button>
+  <button
+    className="pdf-button"
+    type="button"
+    onClick={downloadPdf}
+  >
+    PDF Olarak İndir
+  </button>
 
-    <button
-      className="primary-button"
-      type="button"
-      onClick={validateActivity}
-    >
-      Doğrula
-    </button>
-  </>
-)}
+  {status === 'PENDING' && canValidate && (
+    <>
+      <button
+        className="reject-button"
+        type="button"
+        onClick={rejectActivity}
+      >
+        Reddet
+      </button>
 
-{status === 'PENDING' && !canValidate && (
-  <span className="permission-message">
-    Bu kayıt yalnızca şirket yöneticisi tarafından doğrulanabilir.
-  </span>
-)}
-      </div>
+      <button
+        className="primary-button"
+        type="button"
+        onClick={validateActivity}
+      >
+        Doğrula
+      </button>
+    </>
+  )}
+
+  {status === 'PENDING' && !canValidate && (
+    <span className="permission-message">
+      Bu kayıt yalnızca şirket yöneticisi tarafından doğrulanabilir.
+    </span>
+  )}
+</div>
     </section>
   )
 }

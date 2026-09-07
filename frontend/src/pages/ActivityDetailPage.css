@@ -264,4 +264,70 @@
   color: #66758a;
   font-size: 14px;
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  .sidebar,
+  .detail-actions {
+    display: none !important;
+  }
+
+  .app-layout,
+  .app-layout.sidebar-collapsed {
+    display: block;
+  }
+
+  .page-content {
+    padding: 0;
+  }
+
+  .activity-detail-page {
+    width: 100%;
+    max-width: none;
+    zoom: 0.72;
+  }
+
+  .detail-header {
+    margin-bottom: 12px;
+  }
+
+  .detail-card {
+    margin-bottom: 10px;
+    padding: 15px;
+    break-inside: avoid;
+  }
+
+  .detail-card h2 {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  .detail-grid {
+    gap: 8px 16px;
+  }
+
+  .detail-grid div {
+    padding-bottom: 8px;
+  }
+
+  .gas-results {
+    gap: 10px;
+  }
+
+  .gas-results article {
+    padding: 12px;
+  }
+
+  .gas-results strong {
+    font-size: 17px;
+  }
+
+  .result-card strong {
+    font-size: 25px;
+  }
+}
 }
