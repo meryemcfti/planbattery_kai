@@ -1,17 +1,57 @@
 :root {
-  font-family:
-    Inter,
-    system-ui,
+  /* PlanBattery Original Emerald & Apple Frosted Light Palette */
+  --bg-canvas: #f4f7f8;
+  --bg-sidebar: rgba(255, 255, 255, 0.86);
+  --bg-surface: #ffffff;
+  --bg-subtle: #f1f6f4;
+  --bg-hover: #e8f3ee;
+
+  --border-subtle: #e2ece9;
+  --border-default: #d0dfda;
+  --border-strong: #9fd0be;
+
+  --text-primary: #0d1f33;
+  --text-secondary: #4e6378;
+  --text-muted: #6e8296;
+
+  --brand-primary: #158055;
+  --brand-primary-hover: #116b46;
+  --brand-tint: #e6f6ef;
+  --brand-accent: #10b981;
+
+  --status-ok-bg: #e3f7ee;
+  --status-ok-text: #13704a;
+  --status-ok-border: #bce8d3;
+
+  --status-warn-bg: #fef3c7;
+  --status-warn-text: #8c5e08;
+  --status-warn-border: #fde68a;
+
+  --status-err-bg: #fee2e2;
+  --status-err-text: #b42c2c;
+  --status-err-border: #fecaca;
+
+  --font-sans:
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Plus Jakarta Sans',
+    'Inter',
+    'Segoe UI',
+    sans-serif;
+  --font-display:
+    'Plus Jakarta Sans',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Inter',
     sans-serif;
 
-  color: #142033;
-  background: #f4f6f8;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--bg-canvas);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -27,6 +67,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  background: var(--bg-canvas);
+  color: var(--text-primary);
 }
 
 button,
@@ -38,7 +80,7 @@ textarea {
 
 button,
 a {
-  transition: 150ms ease;
+  transition: all 180ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 a {
@@ -47,4 +89,131 @@ a {
 
 #root {
   min-height: 100vh;
+}
+
+/* Kurumsal Logo Bileşeni (TenantBrandLogo) */
+
+.tenant-brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tenant-brand-identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tenant-custom-logo-img {
+  max-height: 44px;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+.tenant-default-emblem {
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0d2b22 0%, #158055 100%);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 850;
+  font-size: 13.5px;
+  letter-spacing: 0.04em;
+}
+
+.tenant-brand-titles {
+  display: grid;
+  gap: 2px;
+}
+
+.tenant-brand-titles strong {
+  font-size: 16px;
+  font-weight: 850;
+  color: #0d2136;
+  line-height: 1.15;
+}
+
+.tenant-brand-titles small {
+  font-size: 11px;
+  font-weight: 700;
+  color: #158055;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tenant-logo-upload-trigger {
+  position: relative;
+  height: 32px;
+  padding: 0 11px;
+  border-radius: 8px;
+  border: 1px dashed #9fcbb8;
+  background: #f3faf7;
+  color: #13704b;
+  font-size: 11.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.tenant-logo-upload-trigger:hover {
+  background: #158055;
+  border-color: #158055;
+  color: #ffffff;
+}
+
+.tenant-logo-upload-trigger input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Belge QR Kodu Bileşeni (DocumentQrCode) */
+
+.document-qr-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #d5e2df;
+  background: #ffffff;
+}
+
+.document-qr-svg {
+  display: block;
+  border: 1px solid #e2ece9;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.document-qr-meta {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+
+.document-qr-meta strong {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #158055;
+}
+
+.document-qr-meta code {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #0d2136;
+  background: #f1f6f4;
+  padding: 2px 5px;
+  border-radius: 4px;
 }

@@ -1,0 +1,488 @@
+.demo-preview-page {
+  min-height: 100vh;
+  background: #f4f7f6;
+  color: #0e2238;
+  font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.demo-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #dbe6e2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.demo-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #0e2238;
+}
+
+.demo-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #e7f6ef;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-brand-icon img {
+  width: 22px;
+  height: 22px;
+}
+
+.demo-brand strong {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 800;
+}
+
+.demo-brand small {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #158055;
+}
+
+.demo-topbar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo-btn-ghost {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd9d4;
+  background: #ffffff;
+  color: #1e3348;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.demo-btn-primary {
+  padding: 9px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #158055 0%, #10b981 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 750;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 18px -8px rgba(21, 128, 85, 0.55);
+}
+
+.demo-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 26px 20px 44px;
+  display: grid;
+  gap: 22px;
+}
+
+.demo-hero-banner {
+  padding: 28px 30px;
+  border-radius: 20px;
+  background:
+    linear-gradient(125deg, rgba(6, 26, 22, 0.92), rgba(14, 52, 40, 0.85)),
+    url('../assets/forest-cycle.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.demo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #a7f3d0;
+  font-size: 11.5px;
+  font-weight: 750;
+  margin-bottom: 10px;
+}
+
+.demo-hero-banner h1 {
+  margin: 0 0 6px;
+  color: #ffffff !important;
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 800;
+}
+
+.demo-hero-banner p {
+  margin: 0;
+  max-width: 760px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #d8ece6 !important;
+}
+
+.demo-main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.demo-card {
+  padding: 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #d9e4e7;
+  box-shadow: 0 8px 26px rgba(18, 35, 59, 0.04);
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.demo-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.demo-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: #e7f6ef;
+  color: #158055;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.demo-card-head h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.demo-card-head p {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: #5c7084;
+}
+
+.demo-field {
+  display: grid;
+  gap: 6px;
+}
+
+.demo-field span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e3348;
+}
+
+.demo-field input {
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1.5px solid #c3d5cf;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.demo-calc-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.demo-result-box {
+  padding: 14px;
+  border-radius: 13px;
+  background: #f8fbfa;
+  border: 1px solid #e1ece8;
+  display: grid;
+  gap: 4px;
+}
+
+.demo-result-box.featured {
+  background: #eef9f3;
+  border-color: #bfe4d1;
+}
+
+.demo-result-box span {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #5c7084;
+}
+
+.demo-result-box strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0e2238;
+}
+
+.demo-result-box.featured strong {
+  color: #158055;
+}
+
+.demo-result-box small {
+  font-size: 12px;
+  color: #5c7084;
+}
+
+.demo-note-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 11px 13px;
+  border-radius: 11px;
+  background: #f4f8f7;
+  color: #41556a;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.demo-note-box svg {
+  color: #158055;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.demo-sample-kpis {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.demo-sample-kpis div {
+  padding: 13px;
+  border-radius: 12px;
+  background: #f7fbf9;
+  border: 1px solid #e1ece8;
+}
+
+.demo-sample-kpis span {
+  display: block;
+  font-size: 11.5px;
+  color: #5c7084;
+  font-weight: 700;
+}
+
+.demo-sample-kpis strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.demo-sample-facilities {
+  display: grid;
+  gap: 10px;
+}
+
+.demo-sample-facility-row {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fbfdfd;
+  border: 1px solid #e4eeec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.demo-sample-facility-row strong {
+  display: block;
+  font-size: 13.5px;
+}
+
+.demo-sample-facility-row small {
+  font-size: 12px;
+  color: #5c7084;
+}
+
+.demo-sample-facility-row span {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #158055;
+}
+
+.demo-locked-section {
+  padding: 28px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f3faf6 100%);
+  border: 1px solid #c6dfd4;
+  box-shadow: 0 14px 36px -16px rgba(16, 62, 44, 0.12);
+  display: grid;
+  gap: 20px;
+}
+
+.demo-pro-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: #e4f5ec;
+  color: #158055;
+  font-size: 11.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.demo-btn-lg {
+  padding: 11px 20px;
+  font-size: 13.5px;
+}
+
+.demo-locked-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.demo-locked-header h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0e2238;
+}
+
+.demo-locked-header p {
+  margin: 0;
+  max-width: 620px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #4f6478;
+}
+
+.demo-locked-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.demo-locked-card {
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #d9e7e2;
+  box-shadow: 0 8px 22px -14px rgba(14, 34, 56, 0.14);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.demo-locked-card:hover {
+  transform: translateY(-2px);
+  border-color: #9fd0bc;
+  box-shadow: 0 14px 28px -14px rgba(21, 128, 85, 0.2);
+}
+
+.locked-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.locked-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tone-emerald .locked-icon {
+  background: #e3f6ec;
+  color: #158055;
+}
+
+.tone-teal .locked-icon {
+  background: #e4f3f8;
+  color: #0e7490;
+}
+
+.tone-amber .locked-icon {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.locked-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.demo-locked-card strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0e2238;
+  line-height: 1.35;
+}
+
+.demo-locked-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #4f6478;
+}
+
+.locked-benefits {
+  margin: 4px 0 0;
+  padding: 10px 0 0;
+  border-top: 1px solid #edf3f1;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.locked-benefits li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #158055;
+}
+
+.locked-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-weight: 900;
+}
+
+@media (max-width: 860px) {
+  .demo-main-grid,
+  .demo-locked-grid {
+    grid-template-columns: 1fr;
+  }
+}

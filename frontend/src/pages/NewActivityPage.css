@@ -27,11 +27,12 @@
 
 .activity-form {
   width: 100%;
-  max-width: 1050px;
+  max-width: none;
   padding: 28px;
   border: 1px solid #dce3e9;
   border-radius: 12px;
   background: #ffffff;
+
 }
 
 .form-information {
@@ -139,8 +140,253 @@
   background: #ffffff;
 }
 
+.submit-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 4. Karbon Hesaplama Matrisi Bölümü */
+
+.matrix-builder-section legend,
+.evidence-upload-section legend {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #14704c;
+}
+
+.section-helper-note {
+  margin: 0 0 16px;
+  font-size: 13.5px;
+  color: #54687c;
+}
+
+.matrix-inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.live-matrix-preview {
+  margin-top: 18px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #eefaf4 0%, #f7fcf9 100%);
+  border: 1px solid #bbe5d1;
+}
+
+.live-matrix-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #13704b;
+  font-size: 13.5px;
+  margin-bottom: 12px;
+}
+
+.live-matrix-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.live-matrix-row > div {
+  padding: 11px 13px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #d5ebe0;
+}
+
+.live-matrix-row span {
+  display: block;
+  font-size: 11.5px;
+  color: #5a7084;
+  margin-bottom: 4px;
+}
+
+.live-matrix-row strong {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #0e2338;
+}
+
+.live-matrix-total {
+  background: #158055 !important;
+  border-color: #158055 !important;
+}
+
+.live-matrix-total span {
+  color: #c9f7e1 !important;
+}
+
+.live-matrix-total strong {
+  color: #ffffff !important;
+  font-size: 16px !important;
+}
+
+/* 5. Kanıt Görselleri Yükleme Bölümü */
+
+.evidence-upload-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.upload-drop-card {
+  position: relative;
+  padding: 20px 16px;
+  border-radius: 14px;
+  border: 1.5px dashed #9fcab8;
+  background: #f8fcfa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.upload-drop-card:hover {
+  border-color: #158055;
+  background: #eef9f4;
+  transform: translateY(-1px);
+}
+
+.upload-drop-card input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-drop-card svg {
+  color: #158055;
+}
+
+.upload-drop-card strong {
+  font-size: 13.5px;
+  font-weight: 750;
+  color: #0f2338;
+}
+
+.upload-drop-card small {
+  font-size: 11.5px;
+  color: #5e7387;
+}
+
+.quick-sample-evidence-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #f3f7f8;
+  font-size: 12.5px;
+  font-weight: 650;
+  color: #4b6074;
+}
+
+.quick-sample-evidence-bar button {
+  height: 30px;
+  padding: 0 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 7px;
+  border: 1px solid #c5d6df;
+  background: #ffffff;
+  color: #1c3146;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.quick-sample-evidence-bar button:hover {
+  border-color: #158055;
+  color: #158055;
+  background: #eef8f3;
+}
+
+.attached-evidence-list {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.attached-evidence-item {
+  padding: 11px 14px;
+  border-radius: 11px;
+  border: 1px solid #d5e4df;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.attached-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #d5e2df;
+}
+
+.attached-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: #e6f6ef;
+  color: #158055;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.attached-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.attached-meta strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 750;
+  color: #0f2338;
+}
+
+.attached-meta small {
+  font-size: 12px;
+  color: #5d7285;
+}
+
+.attached-remove-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 0;
+  background: transparent;
+  color: #7c8d9e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.attached-remove-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
 @media (max-width: 800px) {
-  .form-grid {
+  .form-grid,
+  .matrix-inputs-grid,
+  .live-matrix-row,
+  .evidence-upload-grid {
     grid-template-columns: 1fr;
   }
 

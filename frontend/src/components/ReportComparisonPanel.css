@@ -1,0 +1,366 @@
+.comparison-panel {
+  margin-top: 24px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #d9e4e7;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(18, 35, 59, 0.04);
+  display: grid;
+  gap: 20px;
+}
+
+.comparison-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.comparison-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.comparison-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #e5f5ed;
+  color: #158055;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.comparison-title-wrap h2 {
+  margin: 0 0 3px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0e2238;
+}
+
+.comparison-title-wrap p {
+  margin: 0;
+  font-size: 13px;
+  color: #5c7084;
+}
+
+.comparison-granularity-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #f2f6f5;
+  border: 1px solid #dbe6e2;
+}
+
+.comparison-tab-btn {
+  padding: 7px 13px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #41556a;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.comparison-tab-btn.active {
+  background: #158055;
+  color: #ffffff;
+  box-shadow: 0 4px 10px -4px rgba(21, 128, 85, 0.45);
+}
+
+.comparison-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.comparison-slot {
+  padding: 14px;
+  border-radius: 13px;
+  border: 1px solid #e1ece8;
+  background: #f9fcfb;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.slot-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.slot-badge.slot-a {
+  background: #e2f4eb;
+  color: #14744f;
+}
+
+.slot-badge.slot-b {
+  background: #e8eef6;
+  color: #2f4b6e;
+}
+
+.slot-badge.slot-filter {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.comparison-slot select,
+.comparison-slot input[type='month'],
+.comparison-slot input[type='week'],
+.comparison-slot input[type='date'] {
+  width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 9px;
+  border: 1px solid #c7d6d2;
+  background: #ffffff;
+  color: #0e2238;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.custom-range-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.comparison-filter-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.comparison-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #364b60;
+  cursor: pointer;
+}
+
+.comparison-checkbox input {
+  accent-color: #158055;
+}
+
+.comparison-report-presets {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 11px;
+  background: #f4f9f7;
+  border: 1px dashed #bed6cd;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #2c4459;
+}
+
+.comparison-report-presets select {
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #c7d6d2;
+  background: #ffffff;
+  font: inherit;
+  font-size: 12.5px;
+}
+
+.comparison-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.comparison-kpi-card {
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid #e1eaed;
+  background: #fbfdfd;
+  display: grid;
+  gap: 6px;
+}
+
+.kpi-label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5c7084;
+}
+
+.comparison-kpi-card strong {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0e2238;
+  font-variant-numeric: tabular-nums;
+}
+
+.comparison-kpi-card small {
+  font-size: 12.5px;
+  color: #5c7084;
+}
+
+.comparison-bar-track {
+  margin-top: 6px;
+  height: 7px;
+  border-radius: 999px;
+  background: #e8efed;
+  overflow: hidden;
+}
+
+.comparison-bar-track span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.comparison-bar-track .bar-a {
+  background: #158055;
+}
+
+.comparison-bar-track .bar-b {
+  background: #5b789c;
+}
+
+.delta-card.is-down {
+  background: #f1faf5;
+  border-color: #bfe4d1;
+}
+
+.delta-card.is-down strong,
+.delta-card.is-down .kpi-label-row {
+  color: #14744f;
+}
+
+.delta-card.is-up {
+  background: #fef6f5;
+  border-color: #f3c8c5;
+}
+
+.delta-card.is-up strong,
+.delta-card.is-up .kpi-label-row {
+  color: #b42318;
+}
+
+.delta-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delta-pct-pill {
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.comparison-facility-section {
+  display: grid;
+  gap: 10px;
+}
+
+.comparison-facility-heading h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: #0e2238;
+}
+
+.comparison-facility-heading span {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: #5c7084;
+}
+
+.comparison-facility-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e2ece8;
+  border-radius: 12px;
+}
+
+.comparison-facility-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.comparison-facility-table th,
+.comparison-facility-table td {
+  padding: 11px 14px;
+  text-align: left;
+  border-bottom: 1px solid #edf2f0;
+  font-variant-numeric: tabular-nums;
+}
+
+.comparison-facility-table th {
+  background: #f6faf8;
+  color: #4f6478;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.comparison-facility-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-facility-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #0e2238;
+}
+
+.table-facility-cell svg {
+  color: #158055;
+}
+
+.table-pct-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.table-pct-badge.down {
+  background: #e3f5ec;
+  color: #14744f;
+}
+
+.table-pct-badge.up {
+  background: #fee2e2;
+  color: #b42318;
+}
+
+.table-pct-badge.flat {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+@media (max-width: 900px) {
+  .comparison-controls,
+  .comparison-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
