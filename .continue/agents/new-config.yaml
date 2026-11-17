@@ -1,9 +1,0 @@
-name: Main Config
-version: 1.0.0
-schema: v1
-models:
-  - name: NVIDIA Gemma 31B
-    provider: openai
-    model: google/gemma-4-31b-it
-    apiKey: "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"
-    apiBase: "https://integrate.api.nvidia.com/v1"
