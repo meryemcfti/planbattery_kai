@@ -13,7 +13,7 @@
 </div>
 
 ---
-### 🎯 1. Why Use This Platform? (Business Value)
+### 🎯 1. Why Use This Platform?
 With evolving regulations such as the **European Green Deal** and the **Carbon Border Adjustment Mechanism (CBAM)**, organizations are increasingly required to measure, verify, and report their greenhouse gas emissions transparently. However, many companies still rely on fragmented spreadsheets and error-prone manual calculations.
 
 **PlanBattery (Kai)** solves this challenge by providing a centralized, auditable platform:
@@ -40,7 +40,7 @@ This platform was engineered with a focus on **type safety, modular architecture
 
 ---
 
-### 🚀 3. Getting Started (How to Run)
+### 🚀 3. Getting Started
 
 #### Prerequisites
 * **Node.js** (v18+)
