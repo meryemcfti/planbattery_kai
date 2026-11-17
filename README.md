@@ -11,8 +11,6 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Prisma_ORM-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![React](https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 
-[🇬🇧 English Documentation](#-english-documentation) • [🇹🇷 Türkçe Dokümantasyon](#-türkçe-dokümantasyon)
-
 </div>
 
 ---
