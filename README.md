@@ -1,7 +1,6 @@
 <div align="center">
 
 # 🌍 PlanBattery (Kai) — Enterprise Carbon Footprint & ESG Reporting Platform
-### Kurumsal Karbon Ayak İzi ve ESG Raporlama Platformu
 
 **End-to-end corporate greenhouse gas (GHG) accounting, automated $CO_2e$ emission calculation, and sustainability reporting system.**  
 *Kurumsal sera gazı (GHG) muhasebesi, otomatik $CO_2e$ emisyon hesaplama ve sürdürülebilirlik raporlama sistemi.*
@@ -14,9 +13,6 @@
 </div>
 
 ---
-
-## 🇬🇧 English Documentation
-
 ### 🎯 1. Why Use This Platform? (Business Value)
 With evolving regulations such as the **European Green Deal** and the **Carbon Border Adjustment Mechanism (CBAM)**, organizations are increasingly required to measure, verify, and report their greenhouse gas emissions transparently. However, many companies still rely on fragmented spreadsheets and error-prone manual calculations.
 
